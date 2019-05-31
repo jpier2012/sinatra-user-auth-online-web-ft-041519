@@ -18,7 +18,7 @@ class ApplicationController < Sinatra::Base
 
   post '/registrations' do
     #binding.pry
-    raise params.inspect
+    raise session.inspect
     @user = User.new(name: params["name"], email: params["email"], password: params["password"])
     @user.save
     session[:user_id] = @user.id
